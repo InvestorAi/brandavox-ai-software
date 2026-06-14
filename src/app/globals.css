@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-container: var(--container);
+  --color-border-custom: var(--border-custom);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-badge: 6px;
+  --radius-card: 8px;
+  --radius-modal: 10px;
+}
+
+:root {
+  --background: #020617;
+  --surface: #0f172a;
+  --container: #111827;
+  --border-custom: rgba(255, 255, 255, 0.08);
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #ea580c;
+  --accent-hover: #f97316;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", sans-serif;
+}
+
+.light {
+  --background: #fafafa;
+  --surface: #ffffff;
+  --container: #ffffff;
+  --border-custom: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-muted: #64748b;
+  --accent: #ea580c;
+  --accent-hover: #f97316;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom Neumorphism Card styles */
+.neumorphism-card-dark {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 
+    -4px -4px 10px rgba(255, 255, 255, 0.01),
+    4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.neumorphism-card-light {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 
+    -6px -6px 12px rgba(255, 255, 255, 0.9),
+    6px 6px 12px rgba(163, 177, 198, 0.2);
+}

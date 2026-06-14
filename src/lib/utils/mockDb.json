@@ -1,0 +1,397 @@
+{
+  "brands": [
+    {
+      "id": "brand-pulse",
+      "organization_id": "mock-org-123",
+      "name": "Pulse Retail",
+      "industry": "Modern E-commerce Logistics",
+      "mission": "To streamline D2C checkout experiences through technical modernist transparency.",
+      "vision": "A unified standard for friction-free trade.",
+      "values": [
+        "Design clarity",
+        "Data integrity",
+        "Speed optimization"
+      ],
+      "voice": "{\"positioning\":\"The premium checkout and operations layer for high-volume consumer brands.\",\"voiceProfile\":{\"tone\":\"Authoritative, technical, clear, and highly focused on raw numbers.\",\"personality\":[\"Expert\",\"Reliable\",\"Sleek\",\"Performance-centric\"],\"vocabulary\":[\"latency\",\"friction-free\",\"throughput\",\"conversion\"],\"avoid\":[\"disruptive\",\"empower\",\"synergy\",\"game-changer\"]},\"contentPillars\":[{\"name\":\"Performance Benchmarks\",\"description\":\"Deep dive statistics comparing page loading speeds with conversions.\",\"contentTypes\":[\"LinkedIn PDF reports\",\"Case study blueprints\"],\"frequency\":\"1x weekly\"},{\"name\":\"Friction Audits\",\"description\":\"Analyses of typical conversion leaks on checkout pages and how to fix them.\",\"contentTypes\":[\"Video breakdowns\",\"Twitter threads\"],\"frequency\":\"2x weekly\"}],\"competitorGaps\":[\"Competitors focus on marketing fluff instead of page latency analytics.\"],\"growthOpportunities\":[\"Build custom API performance benchmarks to run on user sites.\"],\"immediateActions\":[\"Run speed audits on the top 50 D2C Shopify brands.\",\"Publish latency vs conversion chart.\"]}",
+      "tone": "Highly technical, formal, reserved",
+      "brand_score": 82,
+      "logo_url": null,
+      "website": "https://pulseretail.co",
+      "status": "active",
+      "created_at": "2026-06-01T22:16:26.577Z",
+      "updated_at": "2026-06-01T22:16:26.578Z"
+    }
+  ],
+  "personas": [
+    {
+      "id": "persona-1",
+      "organization_id": "mock-org-123",
+      "brand_id": "brand-pulse",
+      "name": "Stevie, E-comm Operations Director",
+      "age_range": "30-45",
+      "demographics": {
+        "role": "VP of Operations",
+        "businessSize": "$10M-$50M ARR"
+      },
+      "pain_points": [
+        "High cart abandonment rates",
+        "Legacy checkout systems slowing load times"
+      ],
+      "goals": [
+        "Boost checkout conversion by 2%",
+        "Integrate modern fast payment rails"
+      ],
+      "platforms": [
+        "LinkedIn",
+        "Twitter"
+      ],
+      "created_at": "2026-06-11T22:16:26.579Z",
+      "updated_at": "2026-06-11T22:16:26.579Z"
+    }
+  ],
+  "clients": [
+    {
+      "id": "client-acme",
+      "organization_id": "mock-org-123",
+      "name": "Sarah Jenkins",
+      "company": "Acme Global Manufacturing",
+      "email": "sjenkins@acmepaper.com",
+      "phone": "+1-555-0122",
+      "health_score": 92,
+      "revenue": 14500,
+      "status": "active",
+      "notes": "Strategic account, completely satisfied. Deliverables consistently submitted ahead of schedule. Expressed minor interest in expansion.",
+      "assigned_to": "Godswill Johnson",
+      "health_details": "{\"communication\":95,\"projectSuccess\":90,\"revenueGrowth\":90,\"satisfaction\":92}",
+      "created_at": "2026-05-17T22:16:26.579Z",
+      "updated_at": "2026-06-11T22:16:26.579Z"
+    },
+    {
+      "id": "client-nova",
+      "organization_id": "mock-org-123",
+      "name": "David Miller",
+      "company": "Nova Freight Systems",
+      "email": "d.miller@novafreight.com",
+      "phone": "+1-555-0178",
+      "health_score": 45,
+      "revenue": 9800,
+      "status": "at_risk",
+      "notes": "Communication has slowed significantly over the past 14 days. Feedback delay has increased by 40% on design revisions.",
+      "assigned_to": "Godswill Johnson",
+      "health_details": "{\"communication\":35,\"projectSuccess\":70,\"revenueGrowth\":50,\"satisfaction\":25}",
+      "created_at": "2026-04-12T22:16:26.579Z",
+      "updated_at": "2026-06-11T22:16:26.579Z"
+    }
+  ],
+  "recoveryPlans": [
+    {
+      "id": "plan-nova",
+      "organization_id": "mock-org-123",
+      "client_id": "client-nova",
+      "status": "active",
+      "risk_score": 55,
+      "strategy": "[\"Establish email communication frequency parity\",\"Deliver 3 quick-win social hooks to restore creative alignment\",\"Re-contract deliverables under a performance revenue sharing framework\"]",
+      "outreach_sequence": "[{\"subject\":\"Realigning operations for Nova Freight Systems\",\"body\":\"Hi David,\\n\\nI noticed our communication has slowed over the past week, and I want to make sure we are fully aligned on the target logistics strategy. We've compiled 3 new creative directions that address the friction points on social conversion.\\n\\nDo you have 10 minutes for a quick alignment sync tomorrow?\\n\\nBest,\\nGodswill\",\"sendDay\":1}]",
+      "actions": "[\"Draft re-engagement email sequence\",\"Schedule internal creative brief review\",\"Generate performance agreement proposal\"]",
+      "created_at": "2026-06-11T22:16:26.579Z",
+      "updated_at": "2026-06-11T22:16:26.579Z"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "camp-latency",
+      "organization_id": "mock-org-123",
+      "brand_id": "brand-pulse",
+      "title": "Q3 Latency Benchmark Launch",
+      "objective": "Establish Pulse Retail as the thought leader in e-commerce site performance benchmarks.",
+      "budget": 5000,
+      "status": "active",
+      "start_date": "2026-06-06T22:16:26.579Z",
+      "end_date": "2026-07-06T22:16:26.579Z",
+      "channels": [
+        "linkedin",
+        "twitter"
+      ],
+      "created_at": "2026-06-05T22:16:26.579Z",
+      "updated_at": "2026-06-05T22:16:26.579Z"
+    }
+  ],
+  "campaignPosts": [
+    {
+      "id": "post-1",
+      "organization_id": "mock-org-123",
+      "campaign_id": "camp-latency",
+      "platform": "linkedin",
+      "content": "Did you know that a 100ms delay in mobile checkout load times can reduce conversion rates by up to 7%? Here is a breakdown of page load latency benchmarks across the top 50 Shopify sites.",
+      "scheduled_at": "2026-06-12T22:16:26.579Z",
+      "published_at": null,
+      "status": "scheduled",
+      "performance": {},
+      "created_at": "2026-06-11T22:16:26.579Z",
+      "updated_at": "2026-06-11T22:16:26.579Z"
+    },
+    {
+      "id": "post-2",
+      "organization_id": "mock-org-123",
+      "campaign_id": "camp-latency",
+      "platform": "twitter",
+      "content": "E-commerce speed matters. We audited 50 top Shopify stores and mapped out exactly where checkout friction occurs. Spoiler: it is mostly image weights and script bloat. Full thread coming tomorrow.",
+      "scheduled_at": "2026-06-09T22:16:26.579Z",
+      "published_at": "2026-06-09T22:16:26.579Z",
+      "status": "published",
+      "performance": {
+        "impressions": 1420,
+        "engagements": 88
+      },
+      "created_at": "2026-06-11T22:16:26.579Z",
+      "updated_at": "2026-06-11T22:16:26.579Z"
+    },
+    {
+      "id": "post-3",
+      "organization_id": "mock-org-123",
+      "campaign_id": "camp-latency",
+      "platform": "linkedin",
+      "content": "Site performance is not just a dev metric; it is a direct driver of revenue. Optimize your checkouts or lose conversions to those who do.",
+      "scheduled_at": "2026-06-16T22:16:26.579Z",
+      "published_at": null,
+      "status": "scheduled",
+      "performance": {},
+      "created_at": "2026-06-11T22:16:26.579Z",
+      "updated_at": "2026-06-11T22:16:26.579Z"
+    }
+  ],
+  "teamMembers": [
+    {
+      "id": "user-godswill",
+      "organization_id": "mock-org-123",
+      "email": "gjohnson@brandavox.co",
+      "full_name": "Godswill Johnson",
+      "role": "owner",
+      "avatar_url": null,
+      "status": "online",
+      "created_at": "2026-06-11T22:16:26.579Z"
+    },
+    {
+      "id": "user-elena",
+      "organization_id": "mock-org-123",
+      "email": "erostova@brandavox.co",
+      "full_name": "Elena Rostova",
+      "role": "manager",
+      "avatar_url": null,
+      "status": "online",
+      "created_at": "2026-06-11T22:16:26.579Z"
+    },
+    {
+      "id": "user-marcus",
+      "organization_id": "mock-org-123",
+      "email": "maurelius@brandavox.co",
+      "full_name": "Marcus Aurelius",
+      "role": "member",
+      "avatar_url": null,
+      "status": "away",
+      "created_at": "2026-06-11T22:16:26.579Z"
+    },
+    {
+      "id": "user-sarah",
+      "organization_id": "mock-org-123",
+      "email": "sjenkins@acmepaper.com",
+      "role": "client",
+      "full_name": "Sarah Jenkins",
+      "avatar_url": null,
+      "status": "offline",
+      "created_at": "2026-06-11T22:16:26.579Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg-1",
+      "organization_id": "mock-org-123",
+      "sender_id": "user-marcus",
+      "sender_name": "Marcus Aurelius",
+      "sender_role": "member",
+      "recipient_id": null,
+      "content": "Hey team, did you review the latest latency benchmarks for Pulse Retail? Checkout page speed is looking stellar.",
+      "file_attachments": [],
+      "channel_id": "general",
+      "created_at": "2026-06-11T19:16:26.579Z"
+    },
+    {
+      "id": "msg-2",
+      "organization_id": "mock-org-123",
+      "sender_id": "user-elena",
+      "sender_name": "Elena Rostova",
+      "sender_role": "manager",
+      "recipient_id": null,
+      "content": "I saw that! Visuals for the campaign are also ready. I will drop the visual storyboard draft in `#creative-studio` shortly.",
+      "file_attachments": [],
+      "channel_id": "general",
+      "created_at": "2026-06-11T20:16:26.579Z"
+    },
+    {
+      "id": "msg-3",
+      "organization_id": "mock-org-123",
+      "sender_id": "user-godswill",
+      "sender_name": "Godswill Johnson",
+      "sender_role": "owner",
+      "recipient_id": null,
+      "content": "Stellar work team. Let us review the storyboard and export the calendar deliverables.",
+      "file_attachments": [],
+      "channel_id": "general",
+      "created_at": "2026-06-11T21:16:26.579Z"
+    },
+    {
+      "id": "msg-4",
+      "organization_id": "mock-org-123",
+      "sender_id": "user-elena",
+      "sender_name": "Elena Rostova",
+      "sender_role": "manager",
+      "recipient_id": null,
+      "content": "Draft scene flow is compiled. Check the attached files.",
+      "file_attachments": [
+        {
+          "name": "pulse_checkout_storyboard.pdf",
+          "size": "1.2MB",
+          "url": "#"
+        }
+      ],
+      "channel_id": "creative-studio",
+      "created_at": "2026-06-11T21:46:26.579Z"
+    }
+  ],
+  "apiKeys": [
+    {
+      "id": "key-1",
+      "organization_id": "mock-org-123",
+      "name": "Production Sync Integration",
+      "hashed_key": "mock_hash_live_4f3c_xyz",
+      "key_prefix": "bv_live_4f3c",
+      "last_used_at": "2026-06-11T20:16:26.579Z",
+      "scopes": [
+        "read:brands",
+        "read:clients",
+        "write:posts"
+      ],
+      "created_at": "2026-06-01T22:16:26.579Z"
+    }
+  ],
+  "webhooks": [
+    {
+      "id": "web-1",
+      "organization_id": "mock-org-123",
+      "url": "https://api.acme.co/webhooks/brandavox",
+      "events": [
+        "campaign.published",
+        "client.at_risk"
+      ],
+      "status": "active",
+      "created_at": "2026-06-01T22:16:26.579Z"
+    }
+  ],
+  "webhookLogs": [
+    {
+      "id": "log-lucvonyp3",
+      "webhook_id": "web-1",
+      "event_type": "campaign.published",
+      "status_code": 200,
+      "latency_ms": 123,
+      "payload": "{\n  \"event\": \"campaign.published\",\n  \"webhook_id\": \"web-1\",\n  \"timestamp\": \"2026-06-14T13:05:54.575Z\",\n  \"data\": {\n    \"campaign_id\": \"camp-pulse-promo\",\n    \"title\": \"Summer Pulse Launch\",\n    \"status\": \"published\",\n    \"published_posts_count\": 5\n  }\n}",
+      "created_at": "2026-06-14T13:05:54.575Z"
+    },
+    {
+      "id": "log-t5e961djn",
+      "webhook_id": "web-1",
+      "event_type": "campaign.published",
+      "status_code": 200,
+      "latency_ms": 141,
+      "payload": "{\n  \"event\": \"campaign.published\",\n  \"webhook_id\": \"web-1\",\n  \"timestamp\": \"2026-06-14T12:24:55.202Z\",\n  \"data\": {\n    \"campaign_id\": \"camp-pulse-promo\",\n    \"title\": \"Summer Pulse Launch\",\n    \"status\": \"published\",\n    \"published_posts_count\": 5\n  }\n}",
+      "created_at": "2026-06-14T12:24:55.202Z"
+    },
+    {
+      "id": "log-yvmh947hl",
+      "webhook_id": "web-1",
+      "event_type": "campaign.published",
+      "status_code": 200,
+      "latency_ms": 130,
+      "payload": "{\n  \"event\": \"campaign.published\",\n  \"webhook_id\": \"web-1\",\n  \"timestamp\": \"2026-06-14T12:24:12.430Z\",\n  \"data\": {\n    \"campaign_id\": \"camp-pulse-promo\",\n    \"title\": \"Summer Pulse Launch\",\n    \"status\": \"published\",\n    \"published_posts_count\": 5\n  }\n}",
+      "created_at": "2026-06-14T12:24:12.430Z"
+    },
+    {
+      "id": "log-1",
+      "webhook_id": "web-1",
+      "event_type": "campaign.published",
+      "status_code": 200,
+      "latency_ms": 240,
+      "payload": "{\n  \"event\": \"campaign.published\",\n  \"campaign_id\": \"camp-latency\",\n  \"timestamp\": \"2026-06-11T17:16:26.579Z\"\n}",
+      "created_at": "2026-06-11T17:16:26.579Z"
+    },
+    {
+      "id": "log-2",
+      "webhook_id": "web-1",
+      "event_type": "client.at_risk",
+      "status_code": 200,
+      "latency_ms": 185,
+      "payload": "{\n  \"event\": \"client.at_risk\",\n  \"client_id\": \"client-nova\",\n  \"risk_score\": 55,\n  \"timestamp\": \"2026-06-10T22:16:26.579Z\"\n}",
+      "created_at": "2026-06-10T22:16:26.579Z"
+    }
+  ],
+  "securityStats": {
+    "rateLimitBlocks": 42,
+    "burnerEmailIntercepts": 22
+  },
+  "emailMarketingConfig": {
+    "activeSyncProvider": "aws_ses",
+    "authRoute": "zeptomail",
+    "transactionalRoute": "aws_ses",
+    "marketingRoute": "alibaba_directmail",
+    "syncHistory": [
+      {
+        "id": "sync-x5qfd3z",
+        "email": "agent_40112@brandavox.ai",
+        "fullName": "Validation Agent",
+        "provider": "aws_ses",
+        "status": "success",
+        "timestamp": "2026-06-14T13:05:39.120Z"
+      },
+      {
+        "id": "sync-3ittqti",
+        "email": "agent_13831@brandavox.ai",
+        "fullName": "Validation Agent",
+        "provider": "aws_ses",
+        "status": "success",
+        "timestamp": "2026-06-14T12:24:54.462Z"
+      },
+      {
+        "id": "sync-jfy3f62",
+        "email": "agent_74162@brandavox.ai",
+        "fullName": "Validation Agent",
+        "provider": "aws_ses",
+        "status": "success",
+        "timestamp": "2026-06-14T12:24:11.682Z"
+      },
+      {
+        "id": "sync-o2mde72",
+        "email": "agent_10520@brandavox.ai",
+        "fullName": "Validation Agent",
+        "provider": "aws_ses",
+        "status": "success",
+        "timestamp": "2026-06-14T12:23:05.717Z"
+      },
+      {
+        "id": "sync-1",
+        "email": "d.miller@novafreight.com",
+        "fullName": "David Miller",
+        "provider": "aws_ses",
+        "status": "success",
+        "timestamp": "2026-06-12T12:23:04.744Z"
+      },
+      {
+        "id": "sync-2",
+        "email": "sjenkins@acmepaper.com",
+        "fullName": "Sarah Jenkins",
+        "provider": "zeptomail",
+        "status": "success",
+        "timestamp": "2026-06-13T12:23:04.760Z"
+      }
+    ]
+  }
+}
