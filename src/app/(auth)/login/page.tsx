@@ -7,6 +7,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Mail, Lock, Loader2, ArrowRight, Eye, EyeOff } from 'lucide-react';
 import Link from 'next/link';
+import { createClient } from '@/lib/supabase/client';
+import MockGoogleModal from '@/components/ui/MockGoogleModal';
 
 const loginSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
@@ -20,6 +22,65 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [isGoogleModalOpen, setIsGoogleModalOpen] = useState(false);
+
+  const isSupabaseConfigured = () => {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    return url && url.trim() !== '' && !url.includes('your-project');
+  };
+
+  const handleGoogleClick = async () => {
+    if (isSupabaseConfigured()) {
+      setLoading(true);
+      try {
+        const supabase = createClient();
+        await supabase.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            redirectTo: `${window.location.origin}/api/auth/callback`,
+          },
+        });
+      } catch (err) {
+        setError('Failed to initialize Google login');
+        setLoading(false);
+      }
+    } else {
+      setIsGoogleModalOpen(true);
+    }
+  };
+
+  const handleGoogleSelect = async (account: { email: string; fullName: string }) => {
+    setIsGoogleModalOpen(false);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: account.email,
+          password: 'mock-google-password-123',
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        setError(result.error || 'Google login failed');
+        setLoading(false);
+        return;
+      }
+
+      router.push('/overview');
+      router.refresh();
+    } catch (err) {
+      setError('An unexpected error occurred during Google sign in.');
+      setLoading(false);
+    }
+  };
 
   const {
     register,
@@ -204,6 +265,7 @@ export default function LoginPage() {
           {/* Social OAuth */}
           <button
             type="button"
+            onClick={handleGoogleClick}
             disabled={loading}
             className="w-full bg-surface hover:bg-surface/80 border border-border-custom text-text-primary py-3 px-4 rounded-badge font-sans text-sm flex items-center justify-center gap-3 transition-colors duration-150 cursor-pointer disabled:opacity-50"
           >
@@ -226,6 +288,11 @@ export default function LoginPage() {
           </p>
         </div>
       </div>
+      <MockGoogleModal
+        isOpen={isGoogleModalOpen}
+        onClose={() => setIsGoogleModalOpen(false)}
+        onSelect={handleGoogleSelect}
+      />
     </div>
   );
 }
