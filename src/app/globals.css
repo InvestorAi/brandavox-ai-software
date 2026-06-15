@@ -78,3 +78,16 @@ code, pre, .font-mono {
     -6px -6px 12px rgba(255, 255, 255, 0.9),
     6px 6px 12px rgba(163, 177, 198, 0.2);
 }
+
+/* Sleek button micro-animations */
+button, .btn-animate {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+button:hover:not(:disabled), .btn-animate:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.15);
+}
+button:active:not(:disabled), .btn-animate:active:not(:disabled) {
+  transform: translateY(0.5px);
+}
+

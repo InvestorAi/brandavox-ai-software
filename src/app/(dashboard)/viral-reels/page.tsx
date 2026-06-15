@@ -36,11 +36,11 @@ export default function ViralReelsPage() {
   // Plan Toggle (to let user test all workflows easily)
   const [userPlan, setUserPlan] = useState<'free' | 'professional' | 'agency'>('free');
   
-  // Asset upload states
-  const [sourceVideoName, setSourceVideoName] = useState<string | null>(null);
-  const [voiceoverName, setVoiceoverName] = useState<string | null>(null);
-  const [bgMusicName, setBgMusicName] = useState<string | null>(null);
-  const [coverPhotoName, setCoverPhotoName] = useState<string | null>(null);
+  // Asset upload states - pre-populated for testing
+  const [sourceVideoName, setSourceVideoName] = useState<string | null>('brand_keynote_raw.mp4');
+  const [voiceoverName, setVoiceoverName] = useState<string | null>('vocal_voiceover_clone_en.wav');
+  const [bgMusicName, setBgMusicName] = useState<string | null>('swiss_minimalist_beats.mp3');
+  const [coverPhotoName, setCoverPhotoName] = useState<string | null>('thumbnail_high_contrast.png');
 
   // Reel Configuration states
   const [inputLengthMin, setInputLengthMin] = useState(15); // minutes
@@ -196,7 +196,7 @@ export default function ViralReelsPage() {
         setDailyTokensUsed((prev) => prev + generationCost);
         setIsPlaying(true);
       }
-    }, 400);
+    }, 375); // 375ms * 8 = 3.0 seconds compilation duration
   };
 
   const handleExportReel = () => {
@@ -589,6 +589,17 @@ export default function ViralReelsPage() {
                   'w-full aspect-video h-[300px]'
                 }`}
               >
+                {/* Real abstract video background playing loop */}
+                {isPlaying && (
+                  <video
+                    src="https://assets.mixkit.co/videos/preview/mixkit-geometric-shapes-of-orange-and-blue-colors-43093-large.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen pointer-events-none"
+                  />
+                )}
                 {/* Simulated frame particles */}
                 <div className="absolute inset-0 opacity-15 pointer-events-none grid grid-cols-6 grid-rows-6">
                   {Array.from({ length: 36 }).map((_, idx) => (

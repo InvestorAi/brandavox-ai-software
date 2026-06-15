@@ -55,6 +55,62 @@ function syncUserToEmailMarketing(email: string, fullName: string) {
   }
 }
 
+async function sendWelcomeEmail(email: string, fullName: string) {
+  try {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey || apiKey.includes('your-')) {
+      console.log(`[Email Service] RESEND_API_KEY not configured. Simulated welcome email dispatched to ${email}`);
+      return;
+    }
+
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        from: process.env.EMAIL_FROM || 'Brandavox <welcome@brandavox.ai>',
+        to: [email],
+        subject: 'Welcome to Brandavox AI!',
+        html: `
+          <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 5px;">
+            <div style="background-color: #f97316; color: #fff; padding: 15px; text-align: center; font-weight: bold; font-size: 18px; letter-spacing: 2px;">
+              BRANDAVOX AI
+            </div>
+            <div style="padding: 20px; color: #333; line-height: 1.6;">
+              <h2 style="font-size: 20px; font-weight: bold; margin-top: 0; color: #111;">Hello ${fullName},</h2>
+              <p>Welcome to <strong>Brandavox AI</strong> — the ultimate humanoid agency operating system designed for modern creators, designers, and marketers.</p>
+              <p>Your multi-tenant workspace registry has been initialized. You now have full access to our 18 autonomous command suites, including:</p>
+              <ul>
+                <li>High-fidelity Voice Cloning Studio</li>
+                <li>Real-time Neural Image Generator</li>
+                <li>Viral Reels AI Publisher</li>
+                <li>Row-Level Security Sandboxed CRM</li>
+              </ul>
+              <p>We are excited to power your brand operations.</p>
+              <hr style="border: 0; border-top: 1px solid #eaeaea; margin: 20px 0;" />
+              <p style="font-size: 10px; color: #888; text-align: center;">
+                © 2026 Brandavox Corporations. Aba, Abia State, Nigeria.<br />
+                This is a transactional workspace setup confirmation notification.
+              </p>
+            </div>
+          </div>
+        `,
+      }),
+    });
+
+    if (response.ok) {
+      console.log(`[Email Service] Welcome email successfully sent to ${email}`);
+    } else {
+      const errorText = await response.ok ? '' : await response.text();
+      console.error(`[Email Service] Resend API error response: ${errorText}`);
+    }
+  } catch (err) {
+    console.error('[Email Service] Failed to dispatch welcome email:', err);
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -128,6 +184,7 @@ export async function POST(request: NextRequest) {
         });
 
         syncUserToEmailMarketing(email, fullName);
+        await sendWelcomeEmail(email, fullName);
         
         return NextResponse.json({
           success: true,
@@ -147,6 +204,7 @@ export async function POST(request: NextRequest) {
 
     if (!isSupabaseConfigured()) {
       syncUserToEmailMarketing(email, fullName);
+      await sendWelcomeEmail(email, fullName);
       return NextResponse.json({
         success: true,
         data: {
@@ -270,8 +328,9 @@ export async function POST(request: NextRequest) {
           WHITE_LABEL: plan === 'agency',
         },
       });
-    // 6. Sync user to email marketing provider asynchronously (mock integration)
+    // 6. Sync user to email marketing provider and send welcome email
     syncUserToEmailMarketing(email, fullName);
+    await sendWelcomeEmail(email, fullName);
 
     return NextResponse.json({
       success: true,

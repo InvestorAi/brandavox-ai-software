@@ -429,14 +429,14 @@ export default function LandingPage() {
 
       {/* 5. ARCHITECTURE FOOTER SECTION */}
       <footer className="border-t border-border-custom bg-surface py-16 text-xs text-text-muted">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-border-custom/50">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-border-custom/50 text-center">
           {/* Col 1: Brand Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col items-center text-center">
             <div className="flex items-center gap-2">
               <div className="w-3.5 h-3.5 bg-accent" />
               <span className="font-display text-sm font-bold tracking-wider text-text-primary uppercase">BRANDAVOX AI</span>
             </div>
-            <p className="leading-relaxed font-sans">
+            <p className="leading-relaxed font-sans max-w-xs">
               All-in-one studio workspace designed for brands, designers, creators and marketers.
             </p>
             <div className="font-mono text-[10px] text-text-muted">
@@ -445,7 +445,7 @@ export default function LandingPage() {
           </div>
 
           {/* Col 2: Navigation Links */}
-          <div className="space-y-3 font-mono">
+          <div className="space-y-3 font-mono flex flex-col items-center text-center">
             <span className="text-[10px] text-text-primary uppercase tracking-widest font-bold block">Console</span>
             <ul className="space-y-2">
               <li><Link href="/overview" className="hover:text-text-primary transition-colors">Overview</Link></li>
@@ -456,7 +456,7 @@ export default function LandingPage() {
           </div>
 
           {/* Col 3: Legal Pages */}
-          <div className="space-y-3 font-mono">
+          <div className="space-y-3 font-mono flex flex-col items-center text-center">
             <span className="text-[10px] text-text-primary uppercase tracking-widest font-bold block">Legal Registry</span>
             <ul className="space-y-2">
               <li><Link href="/terms" className="hover:text-text-primary transition-colors">Terms of Use</Link></li>
@@ -467,12 +467,11 @@ export default function LandingPage() {
           </div>
 
           {/* Col 4: Corporate Coordinates */}
-          <div className="space-y-3 font-mono leading-relaxed">
+          <div className="space-y-3 font-mono leading-relaxed flex flex-col items-center text-center">
             <span className="text-[10px] text-text-primary uppercase tracking-widest font-bold block">Corporate HQ</span>
             <p className="font-sans">
-              Brandavox Corporations Singapore<br />
-              12 Marina Boulevard, Level 18<br />
-              Singapore 018982<br />
+              Brandavox Corporations<br />
+              Aba, Abia State, Nigeria<br />
               <span className="font-mono text-[10px] text-text-muted">compliance@brandavox.ai</span>
             </p>
           </div>

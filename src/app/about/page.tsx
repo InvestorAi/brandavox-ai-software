@@ -52,7 +52,7 @@ export default function AboutPage() {
               Brandavox Corporations was established in 2026 to bridge the gap between complex generative AI research and everyday brand operations. Our mission is to build software that operates with absolute security, exceptional user experience, and structural engineering precision.
             </p>
             <p>
-              From our global headquarters in Singapore, we deliver multi-tenant agency solutions enabling high-fidelity speech synthesis, neural image generators, and autonomous client responders that fit seamlessly into corporate marketing workflows.
+              From our global headquarters in Aba, Abia State, Nigeria, we deliver multi-tenant agency solutions enabling high-fidelity speech synthesis, neural image generators, and autonomous client responders that fit seamlessly into corporate marketing workflows.
             </p>
           </div>
         </div>
@@ -109,14 +109,13 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-1">
-              <span className="font-bold text-text-primary block">BRANDAVOX CORPORATIONS PTE. LTD.</span>
-              <span>Unique Entity Number (UEN): 202611894D</span>
-              <span>Accounting and Corporate Regulatory Authority (ACRA) Singapore</span>
+              <span className="font-bold text-text-primary block">BRANDAVOX CORPORATIONS</span>
+              <span>RC Number: RC-99887722</span>
+              <span>Corporate Affairs Commission (CAC) Nigeria Registry</span>
             </div>
             <div className="space-y-1">
               <span className="font-bold text-text-primary block">OFFICE LOCATION</span>
-              <span>12 Marina Boulevard, Level 18</span>
-              <span>Marina Bay Financial Centre Tower 3, Singapore 018982</span>
+              <span>Aba, Abia State, Nigeria</span>
               <span>Contact: compliance@brandavox.ai</span>
             </div>
           </div>

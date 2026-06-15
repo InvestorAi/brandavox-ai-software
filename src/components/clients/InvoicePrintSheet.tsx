@@ -120,8 +120,7 @@ export function InvoicePrintSheet({
 
               <div className="text-right font-mono text-xs text-zinc-500 space-y-0.5">
                 <p className="font-bold text-black">Brandavox Group LLC</p>
-                <p>12 Marina Boulevard, Level 18</p>
-                <p>Singapore 018982</p>
+                <p>Aba, Abia State, Nigeria</p>
                 <p>billing@brandavox.co</p>
               </div>
             </div>

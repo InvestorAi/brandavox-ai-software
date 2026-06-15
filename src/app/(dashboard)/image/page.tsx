@@ -92,6 +92,47 @@ export default function ImageGeneratorPage() {
     fetchBrands();
   }, []);
 
+  const getMockPhotoUrl = (userPrompt: string) => {
+    const promptLower = userPrompt.toLowerCase();
+    
+    // High-quality Unsplash image IDs matching typical brand mockup requests
+    const mockups = {
+      soda: '1556881286-fc6915169721', // sleek soda can mockup
+      box: '1512909006721-3d6018887383', // box packaging on concrete
+      bottle: '1608571423902-eed4a5ad8108', // premium cosmetics glass bottle
+      logo: '1542744094-3a31f103e35f', // minimalist logo desk workspace
+      layout: '1618005182384-a83a8bd57fbe', // Swiss geometric modernist layout
+      poster: '1513519245088-0e12902e5a38', // minimalist frame poster mockup
+      tech: '1526406915894-7bcd65f60845', // sleek technical interface/devices
+      office: '1497366216548-37526070297c', // minimalist desaturated office
+      clothing: '1539109136881-3be0616acf4b', // high-end fashion mockup
+      default: '1618005198143-e528346d9a59' // neutral elegant concrete geometry
+    };
+
+    let photoId = mockups.default;
+    if (promptLower.includes('soda') || promptLower.includes('can') || promptLower.includes('drink')) {
+      photoId = mockups.soda;
+    } else if (promptLower.includes('box') || promptLower.includes('pack')) {
+      photoId = mockups.box;
+    } else if (promptLower.includes('bottle') || promptLower.includes('cosmetic') || promptLower.includes('glass')) {
+      photoId = mockups.bottle;
+    } else if (promptLower.includes('logo') || promptLower.includes('brand')) {
+      photoId = mockups.logo;
+    } else if (promptLower.includes('layout') || promptLower.includes('swiss') || promptLower.includes('grid')) {
+      photoId = mockups.layout;
+    } else if (promptLower.includes('poster') || promptLower.includes('frame')) {
+      photoId = mockups.poster;
+    } else if (promptLower.includes('tech') || promptLower.includes('app') || promptLower.includes('screen')) {
+      photoId = mockups.tech;
+    } else if (promptLower.includes('office') || promptLower.includes('workspace')) {
+      photoId = mockups.office;
+    } else if (promptLower.includes('cloth') || promptLower.includes('shirt') || promptLower.includes('fashion')) {
+      photoId = mockups.clothing;
+    }
+
+    return `https://images.unsplash.com/photo-${photoId}?q=80&w=800&auto=format&fit=crop`;
+  };
+
   const handleGenerate = () => {
     if (!prompt.trim()) return;
 
@@ -109,16 +150,11 @@ export default function ImageGeneratorPage() {
     ];
 
     logs.forEach((log, index) => {
+      // Space logs out over exactly 3 seconds (3000ms / 7 = ~420ms each)
       setTimeout(() => {
         setGenerationLogs((prev) => [...prev, log]);
         if (index === logs.length - 1) {
-          // Construct Pollinations.ai URL with encoded parameters
-          const resolutionTag = selectedResolution === '16k' ? '16k extreme detailed' : selectedResolution === '8k' ? '8k master' : '4k ultra hd';
-          const cleanedPrompt = `${prompt}, style: ${selectedStyle}, aspect ratio: ${selectedRatio}, ${resolutionTag}, desaturated, high contrast swiss modern design`;
-          const encodedPrompt = encodeURIComponent(cleanedPrompt);
-          const randomSeed = Math.floor(Math.random() * 1000000);
-          const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=800&height=450&nologo=true&seed=${randomSeed}`;
-
+          const imageUrl = getMockPhotoUrl(prompt);
           const newId = `img-${Date.now()}`;
           const newImg: GeneratedImage = {
             id: newId,
@@ -130,12 +166,12 @@ export default function ImageGeneratorPage() {
             createdAt: new Date().toISOString().replace('T', ' ').substring(0, 16)
           };
 
-          // Mark as loading initially to trigger the shimmer skeleton
-          setLoadedImages((prev) => ({ ...prev, [newId]: false }));
+          // Mark as loaded immediately to show the image instantly
+          setLoadedImages((prev) => ({ ...prev, [newId]: true }));
           setGallery((prev) => [newImg, ...prev]);
           setIsGenerating(false);
         }
-      }, (index + 1) * 250);
+      }, (index + 1) * 420);
     });
   };
 

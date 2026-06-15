@@ -48,6 +48,7 @@ export function DashboardShell({ children }: DashboardShellProps) {
           'fixed inset-y-0 left-0 z-50 transition-transform duration-250 lg:hidden lg:translate-x-0',
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         )}
+        onItemClick={() => setIsSidebarOpen(false)}
       />
 
       {/* 3. Main Workspace Area */}
